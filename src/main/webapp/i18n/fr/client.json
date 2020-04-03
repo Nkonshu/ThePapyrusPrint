@@ -1,0 +1,36 @@
+{
+  "thePapyrusPrintApp": {
+    "client": {
+      "home": {
+        "title": "Clients",
+        "createLabel": "Créer un nouveau Client",
+        "createOrEditLabel": "Créer ou éditer un Client",
+        "notFound": "Aucun Client trouvé"
+      },
+      "created": "Un nouveau Client a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Client avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Client avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Client {{ id }} ?"
+      },
+      "detail": {
+        "title": "Client"
+      },
+      "civilite": "Civilite",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "sexe": "Sexe",
+      "dateNaissance": "Date Naissance",
+      "telephone": "Telephone",
+      "ville": "Ville",
+      "codePostal": "Code Postal",
+      "pays": "Pays",
+      "quartier": "Quartier",
+      "email": "Email",
+      "observation": "Observation",
+      "user": "User",
+      "image": "Image",
+      "facture": "Facture"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "name": "Stock",
+    "fields": [
+        {
+            "fieldName": "stockMax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stockMin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantiteProduit",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "observation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "produit",
+            "otherEntityRelationshipName": "stock",
+            "relationshipName": "produit",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200403234600",
+    "entityTableName": "stock",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

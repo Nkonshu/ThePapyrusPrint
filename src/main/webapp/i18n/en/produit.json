@@ -1,0 +1,35 @@
+{
+  "thePapyrusPrintApp": {
+    "produit": {
+      "home": {
+        "title": "Produits",
+        "createLabel": "Create a new Produit",
+        "createOrEditLabel": "Create or edit a Produit",
+        "notFound": "No Produits found"
+      },
+      "created": "A new Produit is created with identifier {{ param }}",
+      "updated": "A Produit is updated with identifier {{ param }}",
+      "deleted": "A Produit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Produit {{ id }}?"
+      },
+      "detail": {
+        "title": "Produit"
+      },
+      "nom": "Nom",
+      "prixVenteHtva": "Prix Vente Htva",
+      "prixVenteTvac": "Prix Vente Tvac",
+      "prixAchatHt": "Prix Achat Ht",
+      "tauxTvaAchat": "Taux Tva Achat",
+      "tauxTva": "Taux Tva",
+      "observation": "Observation",
+      "description": "Description",
+      "notation": "Notation",
+      "image": "Image",
+      "marque": "Marque",
+      "catalogue": "Catalogue",
+      "commande": "Commande",
+      "facture": "Facture"
+    }
+  }
+}

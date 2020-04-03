@@ -1,0 +1,152 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-produit-heading" jhiTranslate="thePapyrusPrintApp.produit.home.createOrEditLabel">Create or edit a Produit</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                    <div *ngIf="editForm.get('nom')!.invalid && (editForm.get('nom')!.dirty || editForm.get('nom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nom')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.prixVenteHtva" for="field_prixVenteHtva">Prix Vente Htva</label>
+                    <input type="number" class="form-control" name="prixVenteHtva" id="field_prixVenteHtva"
+                           formControlName="prixVenteHtva"/>
+                    <div *ngIf="editForm.get('prixVenteHtva')!.invalid && (editForm.get('prixVenteHtva')!.dirty || editForm.get('prixVenteHtva')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('prixVenteHtva')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('prixVenteHtva')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.prixVenteTvac" for="field_prixVenteTvac">Prix Vente Tvac</label>
+                    <input type="number" class="form-control" name="prixVenteTvac" id="field_prixVenteTvac"
+                           formControlName="prixVenteTvac"/>
+                    <div *ngIf="editForm.get('prixVenteTvac')!.invalid && (editForm.get('prixVenteTvac')!.dirty || editForm.get('prixVenteTvac')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('prixVenteTvac')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('prixVenteTvac')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.prixAchatHt" for="field_prixAchatHt">Prix Achat Ht</label>
+                    <input type="number" class="form-control" name="prixAchatHt" id="field_prixAchatHt"
+                           formControlName="prixAchatHt"/>
+                    <div *ngIf="editForm.get('prixAchatHt')!.invalid && (editForm.get('prixAchatHt')!.dirty || editForm.get('prixAchatHt')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('prixAchatHt')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('prixAchatHt')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.tauxTvaAchat" for="field_tauxTvaAchat">Taux Tva Achat</label>
+                    <input type="number" class="form-control" name="tauxTvaAchat" id="field_tauxTvaAchat"
+                           formControlName="tauxTvaAchat"/>
+                    <div *ngIf="editForm.get('tauxTvaAchat')!.invalid && (editForm.get('tauxTvaAchat')!.dirty || editForm.get('tauxTvaAchat')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tauxTvaAchat')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('tauxTvaAchat')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.tauxTva" for="field_tauxTva">Taux Tva</label>
+                    <input type="number" class="form-control" name="tauxTva" id="field_tauxTva"
+                           formControlName="tauxTva"/>
+                    <div *ngIf="editForm.get('tauxTva')!.invalid && (editForm.get('tauxTva')!.dirty || editForm.get('tauxTva')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tauxTva')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('tauxTva')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.observation" for="field_observation">Observation</label>
+                    <input type="text" class="form-control" name="observation" id="field_observation"
+                           formControlName="observation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="thePapyrusPrintApp.produit.notation" for="field_notations">Notation</label>
+                    <select class="form-control" id="field_notations" multiple name="notations" formControlName="notations">
+                        <option [ngValue]="getSelected(editForm.get('notations')!.value, notationOption)" *ngFor="let notationOption of notations; trackBy: trackById">{{ notationOption.note }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="thePapyrusPrintApp.produit.image" for="field_images">Image</label>
+                    <select class="form-control" id="field_images" multiple name="images" formControlName="images">
+                        <option [ngValue]="getSelected(editForm.get('images')!.value, imageOption)" *ngFor="let imageOption of images; trackBy: trackById">{{ imageOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.marque" for="field_marque">Marque</label>
+                    <select class="form-control" id="field_marque" name="marque" formControlName="marque">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="marqueOption.id === editForm.get('marque')!.value?.id ? editForm.get('marque')!.value : marqueOption" *ngFor="let marqueOption of marques; trackBy: trackById">{{ marqueOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

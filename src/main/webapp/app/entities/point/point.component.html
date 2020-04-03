@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="thePapyrusPrintApp.point.home.title">Points</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-point" [routerLink]="['/point/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="thePapyrusPrintApp.point.home.createLabel">
+            Create a new Point
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="points?.length === 0">
+        <span jhiTranslate="thePapyrusPrintApp.point.home.notFound">No points found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="points?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.point.nombrePoint">Nombre Point</span></th>
+                    <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.point.observation">Observation</span></th>
+                    <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.point.client">Client</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let point of points ;trackBy: trackId">
+                    <td><a [routerLink]="['/point', point.id, 'view']">{{ point.id }}</a></td>
+                    <td>{{ point.nombrePoint }}</td>
+                    <td>{{ point.observation }}</td>
+                    <td>
+                        <div *ngIf="point.client">
+                            <a [routerLink]="['/client', point.client?.id, 'view']" >{{ point.client?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/point', point.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/point', point.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(point)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

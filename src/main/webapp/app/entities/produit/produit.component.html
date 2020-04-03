@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="thePapyrusPrintApp.produit.home.title">Produits</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-produit" [routerLink]="['/produit/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="thePapyrusPrintApp.produit.home.createLabel">
+            Create a new Produit
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="produits?.length === 0">
+        <span jhiTranslate="thePapyrusPrintApp.produit.home.notFound">No produits found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="produits?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom"><span jhiTranslate="thePapyrusPrintApp.produit.nom">Nom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prixVenteHtva"><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteHtva">Prix Vente Htva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prixVenteTvac"><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteTvac">Prix Vente Tvac</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prixAchatHt"><span jhiTranslate="thePapyrusPrintApp.produit.prixAchatHt">Prix Achat Ht</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tauxTvaAchat"><span jhiTranslate="thePapyrusPrintApp.produit.tauxTvaAchat">Taux Tva Achat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tauxTva"><span jhiTranslate="thePapyrusPrintApp.produit.tauxTva">Taux Tva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.produit.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="description"><span jhiTranslate="thePapyrusPrintApp.produit.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="marque.id"><span jhiTranslate="thePapyrusPrintApp.produit.marque">Marque</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let produit of produits ;trackBy: trackId">
+                    <td><a [routerLink]="['/produit', produit.id, 'view']">{{ produit.id }}</a></td>
+                    <td>{{ produit.nom }}</td>
+                    <td>{{ produit.prixVenteHtva }}</td>
+                    <td>{{ produit.prixVenteTvac }}</td>
+                    <td>{{ produit.prixAchatHt }}</td>
+                    <td>{{ produit.tauxTvaAchat }}</td>
+                    <td>{{ produit.tauxTva }}</td>
+                    <td>{{ produit.observation }}</td>
+                    <td>{{ produit.description }}</td>
+                    <td>
+                        <div *ngIf="produit.marque">
+                            <a [routerLink]="['/marque', produit.marque?.id, 'view']" >{{ produit.marque?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/produit', produit.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/produit', produit.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(produit)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="produits?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

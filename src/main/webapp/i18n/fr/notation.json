@@ -1,0 +1,24 @@
+{
+  "thePapyrusPrintApp": {
+    "notation": {
+      "home": {
+        "title": "Notations",
+        "createLabel": "Créer un nouveau Notation",
+        "createOrEditLabel": "Créer ou éditer un Notation",
+        "notFound": "Aucun Notation trouvé"
+      },
+      "created": "Un nouveau Notation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Notation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Notation avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Notation {{ id }} ?"
+      },
+      "detail": {
+        "title": "Notation"
+      },
+      "note": "Note",
+      "observation": "Observation",
+      "produit": "Produit"
+    }
+  }
+}

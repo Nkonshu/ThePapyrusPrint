@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="client">
+            <h2><span jhiTranslate="thePapyrusPrintApp.client.detail.title">Client</span> {{ client.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.civilite">Civilite</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'thePapyrusPrintApp.Civilite.' + client.civilite }}">{{ client.civilite }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ client.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ client.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.sexe">Sexe</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'thePapyrusPrintApp.Sexe.' + client.sexe }}">{{ client.sexe }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.dateNaissance">Date Naissance</span></dt>
+                <dd>
+                    <span>{{ client.dateNaissance }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ client.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.ville">Ville</span></dt>
+                <dd>
+                    <span>{{ client.ville }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.codePostal">Code Postal</span></dt>
+                <dd>
+                    <span>{{ client.codePostal }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.pays">Pays</span></dt>
+                <dd>
+                    <span>{{ client.pays }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.quartier">Quartier</span></dt>
+                <dd>
+                    <span>{{ client.quartier }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.email">Email</span></dt>
+                <dd>
+                    <span>{{ client.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.observation">Observation</span></dt>
+                <dd>
+                    <span>{{ client.observation }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.user">User</span></dt>
+                <dd>
+                    {{ client.user?.login }}
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.client.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="client.image">
+                        <a [routerLink]="['/client', client.image?.id, 'view']">{{ client.image?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/client', client.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

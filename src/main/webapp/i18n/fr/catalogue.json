@@ -1,0 +1,25 @@
+{
+  "thePapyrusPrintApp": {
+    "catalogue": {
+      "home": {
+        "title": "Catalogues",
+        "createLabel": "Créer un nouveau Catalogue",
+        "createOrEditLabel": "Créer ou éditer un Catalogue",
+        "notFound": "Aucun Catalogue trouvé"
+      },
+      "created": "Un nouveau Catalogue a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Catalogue avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Catalogue avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Catalogue {{ id }} ?"
+      },
+      "detail": {
+        "title": "Catalogue"
+      },
+      "nom": "Nom",
+      "observation": "Observation",
+      "produit": "Produit",
+      "fournisseur": "Fournisseur"
+    }
+  }
+}

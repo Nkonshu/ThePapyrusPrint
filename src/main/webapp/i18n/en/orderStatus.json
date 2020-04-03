@@ -1,0 +1,11 @@
+{
+  "thePapyrusPrintApp": {
+    "OrderStatus": {
+      "null": "",
+      "PREPARATION": "PREPARATION",
+      "EXPEDITION": "EXPEDITION",
+      "LIVREE": "LIVREE",
+      "ANNULEE": "ANNULEE"
+    }
+  }
+}

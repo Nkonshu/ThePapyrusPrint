@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="facture">
+            <h2><span jhiTranslate="thePapyrusPrintApp.facture.detail.title">Facture</span> {{ facture.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.date">Date</span></dt>
+                <dd>
+                    <span>{{ facture.date }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.numero">Numero</span></dt>
+                <dd>
+                    <span>{{ facture.numero }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.dateLivraison">Date Livraison</span></dt>
+                <dd>
+                    <span>{{ facture.dateLivraison }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.lieuxLivraison">Lieux Livraison</span></dt>
+                <dd>
+                    <span>{{ facture.lieuxLivraison }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.orderStatus">Order Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'thePapyrusPrintApp.OrderStatus.' + facture.orderStatus }}">{{ facture.orderStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.observation">Observation</span></dt>
+                <dd>
+                    <span>{{ facture.observation }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.produit">Produit</span></dt>
+                <dd>
+                    <span *ngFor="let produit of facture.produits; let last = last">
+                        <a [routerLink]="['/produit', produit?.id, 'view']">{{ produit.nom }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.facture.client">Client</span></dt>
+                <dd>
+                    <div *ngIf="facture.client">
+                        <a [routerLink]="['/client', facture.client?.id, 'view']">{{ facture.client?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/facture', facture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-facture-heading" jhiTranslate="thePapyrusPrintApp.facture.home.createOrEditLabel">Create or edit a Facture</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('date')!.invalid && (editForm.get('date')!.dirty || editForm.get('date')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('date')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.numero" for="field_numero">Numero</label>
+                    <input type="text" class="form-control" name="numero" id="field_numero"
+                           formControlName="numero"/>
+                    <div *ngIf="editForm.get('numero')!.invalid && (editForm.get('numero')!.dirty || editForm.get('numero')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numero')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.dateLivraison" for="field_dateLivraison">Date Livraison</label>
+                    <div class="input-group">
+                        <input id="field_dateLivraison" type="text" class="form-control" name="dateLivraison" ngbDatepicker #dateLivraisonDp="ngbDatepicker" formControlName="dateLivraison"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateLivraisonDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateLivraison')!.invalid && (editForm.get('dateLivraison')!.dirty || editForm.get('dateLivraison')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateLivraison')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.lieuxLivraison" for="field_lieuxLivraison">Lieux Livraison</label>
+                    <input type="text" class="form-control" name="lieuxLivraison" id="field_lieuxLivraison"
+                           formControlName="lieuxLivraison"/>
+                    <div *ngIf="editForm.get('lieuxLivraison')!.invalid && (editForm.get('lieuxLivraison')!.dirty || editForm.get('lieuxLivraison')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lieuxLivraison')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.orderStatus" for="field_orderStatus">Order Status</label>
+                    <select class="form-control" name="orderStatus" formControlName="orderStatus" id="field_orderStatus">
+                        <option value="PREPARATION">{{ 'thePapyrusPrintApp.OrderStatus.PREPARATION' | translate }}</option>
+                        <option value="EXPEDITION">{{ 'thePapyrusPrintApp.OrderStatus.EXPEDITION' | translate }}</option>
+                        <option value="LIVREE">{{ 'thePapyrusPrintApp.OrderStatus.LIVREE' | translate }}</option>
+                        <option value="ANNULEE">{{ 'thePapyrusPrintApp.OrderStatus.ANNULEE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.observation" for="field_observation">Observation</label>
+                    <input type="text" class="form-control" name="observation" id="field_observation"
+                           formControlName="observation"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="thePapyrusPrintApp.facture.produit" for="field_produits">Produit</label>
+                    <select class="form-control" id="field_produits" multiple name="produits" formControlName="produits">
+                        <option [ngValue]="getSelected(editForm.get('produits')!.value, produitOption)" *ngFor="let produitOption of produits; trackBy: trackById">{{ produitOption.nom }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.facture.client" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" formControlName="client">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id === editForm.get('client')!.value?.id ? editForm.get('client')!.value : clientOption" *ngFor="let clientOption of clients; trackBy: trackById">{{ clientOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

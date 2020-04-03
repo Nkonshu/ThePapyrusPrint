@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="catalogue">
+            <h2><span jhiTranslate="thePapyrusPrintApp.catalogue.detail.title">Catalogue</span> {{ catalogue.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="thePapyrusPrintApp.catalogue.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ catalogue.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.catalogue.observation">Observation</span></dt>
+                <dd>
+                    <span>{{ catalogue.observation }}</span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.catalogue.produit">Produit</span></dt>
+                <dd>
+                    <span *ngFor="let produit of catalogue.produits; let last = last">
+                        <a [routerLink]="['/produit', produit?.id, 'view']">{{ produit.nom }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="thePapyrusPrintApp.catalogue.fournisseur">Fournisseur</span></dt>
+                <dd>
+                    <span *ngFor="let fournisseur of catalogue.fournisseurs; let last = last">
+                        <a [routerLink]="['/fournisseur', fournisseur?.id, 'view']">{{ fournisseur.nom }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/catalogue', catalogue.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

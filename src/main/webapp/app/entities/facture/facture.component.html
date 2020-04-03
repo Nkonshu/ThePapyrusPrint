@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="thePapyrusPrintApp.facture.home.title">Factures</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-facture" [routerLink]="['/facture/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="thePapyrusPrintApp.facture.home.createLabel">
+            Create a new Facture
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="factures?.length === 0">
+        <span jhiTranslate="thePapyrusPrintApp.facture.home.notFound">No factures found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="factures?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date"><span jhiTranslate="thePapyrusPrintApp.facture.date">Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numero"><span jhiTranslate="thePapyrusPrintApp.facture.numero">Numero</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateLivraison"><span jhiTranslate="thePapyrusPrintApp.facture.dateLivraison">Date Livraison</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lieuxLivraison"><span jhiTranslate="thePapyrusPrintApp.facture.lieuxLivraison">Lieux Livraison</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="orderStatus"><span jhiTranslate="thePapyrusPrintApp.facture.orderStatus">Order Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.facture.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="client.id"><span jhiTranslate="thePapyrusPrintApp.facture.client">Client</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let facture of factures ;trackBy: trackId">
+                    <td><a [routerLink]="['/facture', facture.id, 'view']">{{ facture.id }}</a></td>
+                    <td>{{ facture.date | date:'mediumDate' }}</td>
+                    <td>{{ facture.numero }}</td>
+                    <td>{{ facture.dateLivraison | date:'mediumDate' }}</td>
+                    <td>{{ facture.lieuxLivraison }}</td>
+                    <td jhiTranslate="{{ 'thePapyrusPrintApp.OrderStatus.' + facture.orderStatus }}">{{ facture.orderStatus }}</td>
+                    <td>{{ facture.observation }}</td>
+                    <td>
+                        <div *ngIf="facture.client">
+                            <a [routerLink]="['/client', facture.client?.id, 'view']" >{{ facture.client?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/facture', facture.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/facture', facture.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(facture)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="factures?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>
