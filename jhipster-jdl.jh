@@ -1,0 +1,118 @@
+entity Commande {
+	date LocalDate,
+    observation String,
+}
+
+entity Facture {
+	date LocalDate  required,
+    numero String required,
+	dateLivraison LocalDate  required,
+	lieuxLivraison String required,
+    orderStatus OrderStatus
+    observation String,
+}
+
+entity Fournisseur {
+	nom String required,
+	ville String required,
+	pays String required,
+	telephone String required,
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+}
+
+entity Stock {
+	stockMax String,
+    stockMin String,
+    quantiteProduit String  required,
+    observation String,
+}
+
+entity Catalogue {
+	nom String required,
+    observation String,
+}
+
+entity Produit {
+	nom String required,
+	prixVenteHtva Float required,
+	prixVenteTvac Float required,
+    prixAchatHt Float required,
+    tauxTvaAchat Float required,
+	tauxTva Float required,
+	observation String,
+    description String
+}
+
+entity Notation {
+	note Float,
+	observation String
+}
+
+entity Marque {
+	nom String required,
+	observation String,
+}
+
+entity Point {
+	nombrePoint Float required,
+	observation String,
+}
+
+entity Image {
+	path String required,
+	observation String,
+}
+
+entity Client {
+	civilite Civilite required,
+	nom String required,
+	prenom String required,
+    sexe Sexe required,
+	dateNaissance LocalDate required,
+    telephone String required,
+    ville String required,
+    codePostal String,
+    pays String required,
+    quartier String,
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+    observation String,
+}
+
+enum Civilite {
+    Mr, Mm, Mlle
+}
+
+enum Sexe {
+    M, F
+}
+
+enum OrderStatus {
+    PREPARATION, EXPEDITION, LIVREE, ANNULEE
+}
+
+relationship OneToOne {
+	Client{user(login)} to User,
+    Point{client} to Client,
+    Client{image}to Client,
+    Stock{produit} to Produit,
+}
+
+relationship OneToMany {
+    Marque{produit} to Produit{marque},
+    Client{facture} to Facture{client},
+    Fournisseur{commande} to Commande{fournisseur}
+}
+
+relationship ManyToMany {
+	Catalogue{produit(nom)} to Produit{catalogue},
+    Catalogue{fournisseur(nom)} to Fournisseur{catalogue},
+	Produit{notation(note)} to  Notation{produit(nom)},
+    Produit{image} to Image{produit},
+	Commande{produit} to Produit{commande},
+	Facture{produit(nom)} to Produit{facture}
+}
+
+// Set pagination options
+filter Produit, Client, Facture, Image, Stock, Marque, Catalogue, Fournisseur, Commande 
+paginate Marque, Fournisseur with infinite-scroll
+paginate Produit, Client, Facture, Image, Stock, Catalogue, Commande with pagination
