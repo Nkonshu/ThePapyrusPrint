@@ -21,3 +21,39 @@ Main page styles
     background-size: contain;
   }
 }
+
+.home {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 11rem);
+  justify-content: center;
+
+  &__head {
+    background-color: #ffffff;
+  }
+  &__middle {
+    &__up {
+      background-color: #ffffff;
+    }
+    &__down {
+      background-color: #ffffff;
+    }
+  }
+  &__left {
+    &__up {
+      background-color: #ffffff;
+    }
+    &__down {
+      background-color: #ffffff;
+    }
+  }
+  &__right {
+    &__up {
+      background-color: #ffffff;
+    }
+    &__down {
+      background-color: #ffffff;
+    }
+  }
+}
