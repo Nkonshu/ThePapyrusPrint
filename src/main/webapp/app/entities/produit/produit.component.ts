@@ -9,11 +9,12 @@ import { IProduit } from 'app/shared/model/produit.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { ProduitService } from './produit.service';
-import { ProduitDeleteDialogComponent } from './produit-delete-dialog.component';
+// import { ProduitDeleteDialogComponent } from './produit-delete-dialog.component';
 
 @Component({
   selector: 'jhi-produit',
-  templateUrl: './produit.component.html'
+  templateUrl: './produit.component.html',
+  styleUrls: ['produit.component.scss']
 })
 export class ProduitComponent implements OnInit, OnDestroy {
   produits?: IProduit[];
@@ -74,10 +75,10 @@ export class ProduitComponent implements OnInit, OnDestroy {
     this.eventSubscriber = this.eventManager.subscribe('produitListModification', () => this.loadPage());
   }
 
-  delete(produit: IProduit): void {
-    const modalRef = this.modalService.open(ProduitDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-    modalRef.componentInstance.produit = produit;
-  }
+  // delete(produit: IProduit): void {
+  //   const modalRef = this.modalService.open(ProduitDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
+  //   modalRef.componentInstance.produit = produit;
+  // }
 
   sort(): string[] {
     const result = [this.predicate + ',' + (this.ascending ? 'asc' : 'desc')];

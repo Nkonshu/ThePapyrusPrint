@@ -1,0 +1,45 @@
+<div class="card mb-4 shadow-sm">
+    <img class="bd-placeholder-img card-img-top p-2" width="100%" src="../../../../content/images/carte.png" />
+    <!-- <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="produit.imageUrl" /> -->
+  
+    <div class="card-body">
+      <p class="card-text">
+        <strong>{{ produit.prixAchatHt | currency:'XAF' | space }}</strong>
+      </p>
+      <!-- <p><a [routerLink]="['/produit', produit.id, 'view']">{{ produit.id }}</a></p> -->
+      <p>
+        <div *ngIf="produit.marque">
+            <a [routerLink]="['/marque', produit.marque?.id, 'view']" >{{ produit.marque?.nom }}</a>
+        </div>
+      </p>
+      <p>{{ produit.nom }}</p>
+      <!-- <p>{{ produit.prixVenteHtva  | currency:'XAF' }}</p>
+      <p>{{ produit.prixVenteTvac  | currency:'XAF' }}</p>
+      <p>{{ produit.tauxTvaAchat }}</p>
+      <p>{{ produit.tauxTva }}</p>
+      <p>{{ produit.observation }}</p>
+      <p class="card-text">{{ produit.description }}</p> -->
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <!-- <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">
+            Add to Cart
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary product-btn">
+              View Details
+          </button> -->
+          <button type="submit" [routerLink]="['/produit', produit.id, 'view']" class="btn btn-info btn-sm">
+            <fa-icon icon="eye"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+          </button>
+          <button type="submit" [routerLink]="['/produit', produit.id, 'edit']" class="btn btn-primary btn-sm">
+            <fa-icon icon="pencil-alt"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+          </button>
+          <button type="submit" (click)="delete(produit)" class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

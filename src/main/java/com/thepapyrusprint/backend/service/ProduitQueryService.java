@@ -56,10 +56,8 @@ public class ProduitQueryService extends QueryService<Produit> {
      * @return the matching entities.
      */
     @Transactional(readOnly = true)
-    public Page<Produit> findByCriteria(ProduitCriteria criteria, Pageable page) {
-        log.debug("find by criteria : {}, page: {}", criteria, page);
-        final Specification<Produit> specification = createSpecification(criteria);
-        return produitRepository.findAll(specification, page);
+    public List<Produit> findByCriteria() {
+        return produitRepository.findAll();
     }
 
     /**

@@ -99,9 +99,8 @@ public class ProduitResource {
     @GetMapping("/produits")
     public ResponseEntity<List<Produit>> getAllProduits(ProduitCriteria criteria, Pageable pageable) {
         log.debug("REST request to get Produits by criteria: {}", criteria);
-        Page<Produit> page = produitQueryService.findByCriteria(criteria, pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
+        List<Produit> page = produitQueryService.findByCriteria();
+        return ResponseEntity.ok().body(page);
     }
 
     /**
