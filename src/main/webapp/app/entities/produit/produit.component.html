@@ -48,19 +48,9 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <label for="from">Nom :</label>
-                  <input type="text" id="from" class="form-control">
+                  <label for="from">Produit :</label>
+                  <input type="text" id="from" [(ngModel)]="nameSearch" class="form-control" name="produit">
                 </div>
-                <div class="form-group">
-                    <label for="to">Catégorie :</label>
-                    <select class="form-control">
-                        <option>Carte de visite</option>
-                        <option>Flyers</option>
-                        <option>Autocollants</option>
-                        <option>Affiches</option>
-                        <option>Emballages</option>
-                      </select>
-                  </div>
                 <button class="btn btn-primary btn-block btn-sm">Rechercher</button>
               </form>
             </div>
@@ -88,7 +78,7 @@
     
         <div *ngIf="produits?.length > 0">
             <div class="row">
-                <div class="col-md-4" *ngFor="let produit of produits ;trackBy: trackId">
+                <div class="col-md-4" *ngFor="let produit of produits | produitFilterPipe: nameSearch">
                   <jhi-cart-produit [produit]="produit"></jhi-cart-produit>
                 </div>
             </div>

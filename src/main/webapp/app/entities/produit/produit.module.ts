@@ -11,14 +11,16 @@ import { CartProduitComponent } from './cart-produit/cart-produit.component';
 import { SpacePipe } from './currency-space.pipe';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+import { ProduitFilterPipe } from './produit-filter.pipe';
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   imports: [ThePapyrusPrintSharedModule, RouterModule.forChild(produitRoute)],
-  exports: [CartProduitComponent, SpacePipe],
+  exports: [CartProduitComponent, SpacePipe, ProduitFilterPipe],
   declarations: [
     SpacePipe,
+    ProduitFilterPipe,
     CartProduitComponent,
     ProduitComponent,
     ProduitDetailComponent,
