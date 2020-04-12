@@ -11,6 +11,7 @@ import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { ProduitService } from './produit.service';
 import { DataTransfertService } from '../../shared/data-transfert.service';
 // import { ProduitDeleteDialogComponent } from './produit-delete-dialog.component';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'jhi-produit',
@@ -64,10 +65,18 @@ export class ProduitComponent implements OnInit, OnDestroy {
       this.loadPage();
     });
     this.registerChangeInProduits();
+    this.filteredItems = cloneDeep(this.produits);
     this.dataTransfert.currentMessage.subscribe(message => {
       this.message = message;
-      this.filteredItems = this.produits?.filter(item => item.nom === message);
-      this.produits = this.filteredItems;
+      if (message) {
+        if (message === 'all') {
+          /* eslint-disable-next-line no-console */
+          console.log('Worked', message);
+          this.loadPage();
+        } else {
+          this.produits = this.produits?.filter(item => item.nom === message);
+        }
+      }
     });
   }
 

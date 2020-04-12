@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
   swaggerEnabled?: boolean;
   version: string;
   message!: string;
+  produits = 'all';
   carte_arrondi = 'Cartes de visite aux coins arrondis';
   carte_carre = 'Cartes de visite carrées';
   flyers_depliants = 'Flyers et dépliants';
