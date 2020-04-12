@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -9,6 +9,7 @@ import { IProduit } from 'app/shared/model/produit.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { ProduitService } from './produit.service';
+import { DataTransfertService } from '../../shared/data-transfert.service';
 // import { ProduitDeleteDialogComponent } from './produit-delete-dialog.component';
 
 @Component({
@@ -17,7 +18,8 @@ import { ProduitService } from './produit.service';
   styleUrls: ['produit.component.scss']
 })
 export class ProduitComponent implements OnInit, OnDestroy {
-  produits?: IProduit[];
+  produits!: IProduit[];
+  filteredItems!: IProduit[];
   eventSubscriber?: Subscription;
   totalItems = 0;
   itemsPerPage = ITEMS_PER_PAGE;
@@ -26,13 +28,16 @@ export class ProduitComponent implements OnInit, OnDestroy {
   ascending!: boolean;
   ngbPaginationPage = 1;
   nameSearch!: string;
+  message!: string;
 
   constructor(
     protected produitService: ProduitService,
     protected activatedRoute: ActivatedRoute,
     protected router: Router,
     protected eventManager: JhiEventManager,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
+    private dataTransfert: DataTransfertService,
+    private ref: ChangeDetectorRef
   ) {}
 
   loadPage(page?: number): void {
@@ -59,6 +64,11 @@ export class ProduitComponent implements OnInit, OnDestroy {
       this.loadPage();
     });
     this.registerChangeInProduits();
+    this.dataTransfert.currentMessage.subscribe(message => {
+      this.message = message;
+      this.filteredItems = this.produits?.filter(item => item.nom === message);
+      this.produits = this.filteredItems;
+    });
   }
 
   ngOnDestroy(): void {

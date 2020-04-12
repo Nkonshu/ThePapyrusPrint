@@ -5,6 +5,37 @@
     "menu": {
       "home": "Accueil",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+      "carte": {
+        "name": "Cartes de visite",
+        "arrondi": "Cartes de visite aux coins arrondis",
+        "carre": "Cartes de visite carrées"
+      },
+      "marketing": {
+        "name": "Supports marketing",
+        "flyers": "Flyers et dépliants",
+        "chemises": "Chemises porte-documents",
+        "etiquettes": "Etiquettes",
+        "graphique": "Service graphique",
+        "sacs": "Sac papier",
+        "mug": "Mug",
+        "tasses": "Magic mugs"
+      },
+      "affiches": {
+        "name": "Affiches et pancartes",
+        "banderole": "Banderoles",
+        "roll": "Roll-ups",
+        "affiches": "Affiches",
+        "carton": "Carton plumes"
+      },
+      "invitations": {
+        "name": "Invitations et papeterie",
+        "mariage": "Faire-part de mariage",
+        "baby": "Carte d'invitation de baby shower",
+        "anniversaire": "Carte d'invitation d'anniversaire",
+        "menu": "Menus",
+        "fete": "Carte d'invitation fêtes",
+        "souvenirs": "Souvenir de mariage"
+      },
       "entities": {
         "main": "Entités",
         "commande": "Commande",

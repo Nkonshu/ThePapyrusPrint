@@ -4,6 +4,37 @@
     "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
     "menu": {
       "home": "Home",
+      "carte": {
+        "name": "Business cards",
+        "arrondi": "Business cards with rounded corners",
+        "carre": "Square business cards"
+      },
+      "marketing": {
+        "name": "Marketing supports",
+        "flyers": "Flyers and leaflets",
+        "chemises": "Briefcases",
+        "etiquettes": "Labels",
+        "graphique": "Graphics service",
+        "sacs": "Paper bag",
+        "mug": "Mug",
+        "tasses": "Magic mugs"
+      },
+      "affiches": {
+        "name": "Posters and signs",
+        "banderole": "Banners",
+        "roll": "Roll-ups",
+        "affiches": "Posters",
+        "carton": "Feather cardboard"
+      },
+      "invitations": {
+        "name": "Invitations and stationery",
+        "mariage": "Wedding announcement",
+        "baby": "Baby shower invitation card",
+        "anniversaire": "Birthday invitation card",
+        "menu": "Menus",
+        "fete": "Party invitation card",
+        "souvenirs": "Wedding souvenir"
+      },
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",

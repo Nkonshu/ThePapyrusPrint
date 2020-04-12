@@ -75,10 +75,9 @@
         <div class="alert alert-warning" id="no-result" *ngIf="produits?.length === 0">
             <span jhiTranslate="thePapyrusPrintApp.produit.home.notFound">No produits found</span>
         </div>
-    
         <div *ngIf="produits?.length > 0">
             <div class="row">
-                <div class="col-md-4" *ngFor="let produit of produits | produitFilterPipe: nameSearch">
+                <div class="col-md-4" *ngFor="let produit of produits | produitFilterPipe: nameSearch; trackBy: trackId">
                   <jhi-cart-produit [produit]="produit"></jhi-cart-produit>
                 </div>
             </div>
