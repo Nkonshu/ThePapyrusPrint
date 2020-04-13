@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="nom"><span jhiTranslate="thePapyrusPrintApp.marque.nom">Nom</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.marque.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
@@ -30,7 +30,7 @@
             </thead>
             <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
                 <tr *ngFor="let marque of marques ;trackBy: trackId">
-                    <td><a [routerLink]="['/marque', marque.id, 'view']">{{ marque.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/marque', marque.id, 'view']">{{ marque.id }}</a></td> -->
                     <td>{{ marque.nom }}</td>
                     <td>{{ marque.observation }}</td>
                     <td class="text-right">

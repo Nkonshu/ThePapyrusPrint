@@ -22,29 +22,29 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="date"><span jhiTranslate="thePapyrusPrintApp.facture.date">Date</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="numero"><span jhiTranslate="thePapyrusPrintApp.facture.numero">Numero</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="dateLivraison"><span jhiTranslate="thePapyrusPrintApp.facture.dateLivraison">Date Livraison</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="lieuxLivraison"><span jhiTranslate="thePapyrusPrintApp.facture.lieuxLivraison">Lieux Livraison</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="orderStatus"><span jhiTranslate="thePapyrusPrintApp.facture.orderStatus">Order Status</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.facture.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.facture.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="client.id"><span jhiTranslate="thePapyrusPrintApp.facture.client">Client</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let facture of factures ;trackBy: trackId">
-                    <td><a [routerLink]="['/facture', facture.id, 'view']">{{ facture.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/facture', facture.id, 'view']">{{ facture.id }}</a></td> -->
                     <td>{{ facture.date | date:'mediumDate' }}</td>
                     <td>{{ facture.numero }}</td>
                     <td>{{ facture.dateLivraison | date:'mediumDate' }}</td>
                     <td>{{ facture.lieuxLivraison }}</td>
                     <td jhiTranslate="{{ 'thePapyrusPrintApp.OrderStatus.' + facture.orderStatus }}">{{ facture.orderStatus }}</td>
-                    <td>{{ facture.observation }}</td>
+                    <!-- <td>{{ facture.observation }}</td> -->
                     <td>
                         <div *ngIf="facture.client">
-                            <a [routerLink]="['/client', facture.client?.id, 'view']" >{{ facture.client?.id }}</a>
+                            <a [routerLink]="['/client', facture.client?.id, 'view']" >{{ facture.client?.nom }}</a>
                         </div>
                     </td>
                     <td class="text-right">

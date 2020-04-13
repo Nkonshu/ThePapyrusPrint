@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="date"><span jhiTranslate="thePapyrusPrintApp.commande.date">Date</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.commande.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fournisseur.id"><span jhiTranslate="thePapyrusPrintApp.commande.fournisseur">Fournisseur</span> <fa-icon icon="sort"></fa-icon></th>
@@ -31,12 +31,12 @@
             </thead>
             <tbody>
                 <tr *ngFor="let commande of commandes ;trackBy: trackId">
-                    <td><a [routerLink]="['/commande', commande.id, 'view']">{{ commande.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/commande', commande.id, 'view']">{{ commande.id }}</a></td> -->
                     <td>{{ commande.date | date:'mediumDate' }}</td>
                     <td>{{ commande.observation }}</td>
                     <td>
                         <div *ngIf="commande.fournisseur">
-                            <a [routerLink]="['/fournisseur', commande.fournisseur?.id, 'view']" >{{ commande.fournisseur?.id }}</a>
+                            <a [routerLink]="['/fournisseur', commande.fournisseur?.id, 'view']" >{{ commande.fournisseur?.nom }}</a>
                         </div>
                     </td>
                     <td class="text-right">

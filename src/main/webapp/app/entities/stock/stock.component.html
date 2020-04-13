@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="stockMax"><span jhiTranslate="thePapyrusPrintApp.stock.stockMax">Stock Max</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="stockMin"><span jhiTranslate="thePapyrusPrintApp.stock.stockMin">Stock Min</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="quantiteProduit"><span jhiTranslate="thePapyrusPrintApp.stock.quantiteProduit">Quantite Produit</span> <fa-icon icon="sort"></fa-icon></th>
@@ -33,14 +33,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let stock of stocks ;trackBy: trackId">
-                    <td><a [routerLink]="['/stock', stock.id, 'view']">{{ stock.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/stock', stock.id, 'view']">{{ stock.id }}</a></td> -->
                     <td>{{ stock.stockMax }}</td>
                     <td>{{ stock.stockMin }}</td>
                     <td>{{ stock.quantiteProduit }}</td>
                     <td>{{ stock.observation }}</td>
                     <td>
                         <div *ngIf="stock.produit">
-                            <a [routerLink]="['/produit', stock.produit?.id, 'view']" >{{ stock.produit?.id }}</a>
+                            <a [routerLink]="['/produit', stock.produit?.id, 'view']" >{{ stock.produit?.nom }}</a>
                         </div>
                     </td>
                     <td class="text-right">

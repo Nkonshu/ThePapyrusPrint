@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="nom"><span jhiTranslate="thePapyrusPrintApp.catalogue.nom">Nom</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.catalogue.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let catalogue of catalogues ;trackBy: trackId">
-                    <td><a [routerLink]="['/catalogue', catalogue.id, 'view']">{{ catalogue.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/catalogue', catalogue.id, 'view']">{{ catalogue.id }}</a></td> -->
                     <td>{{ catalogue.nom }}</td>
                     <td>{{ catalogue.observation }}</td>
                     <td class="text-right">

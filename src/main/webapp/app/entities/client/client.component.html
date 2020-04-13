@@ -22,33 +22,33 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="civilite"><span jhiTranslate="thePapyrusPrintApp.client.civilite">Civilite</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="nom"><span jhiTranslate="thePapyrusPrintApp.client.nom">Nom</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="prenom"><span jhiTranslate="thePapyrusPrintApp.client.prenom">Prenom</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="sexe"><span jhiTranslate="thePapyrusPrintApp.client.sexe">Sexe</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="dateNaissance"><span jhiTranslate="thePapyrusPrintApp.client.dateNaissance">Date Naissance</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="thePapyrusPrintApp.client.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="thePapyrusPrintApp.client.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="ville"><span jhiTranslate="thePapyrusPrintApp.client.ville">Ville</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="codePostal"><span jhiTranslate="thePapyrusPrintApp.client.codePostal">Code Postal</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="pays"><span jhiTranslate="thePapyrusPrintApp.client.pays">Pays</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="quartier"><span jhiTranslate="thePapyrusPrintApp.client.quartier">Quartier</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="email"><span jhiTranslate="thePapyrusPrintApp.client.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="observation"><span jhiTranslate="thePapyrusPrintApp.client.observation">Observation</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="user.login"><span jhiTranslate="thePapyrusPrintApp.client.user">User</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="image.id"><span jhiTranslate="thePapyrusPrintApp.client.image">Image</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="user.login"><span jhiTranslate="thePapyrusPrintApp.client.user">User</span> <fa-icon icon="sort"></fa-icon></th> -->
+                    <!-- <th scope="col"  jhiSortBy="image.id"><span jhiTranslate="thePapyrusPrintApp.client.image">Image</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let client of clients ;trackBy: trackId">
-                    <td><a [routerLink]="['/client', client.id, 'view']">{{ client.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/client', client.id, 'view']">{{ client.id }}</a></td> -->
                     <td jhiTranslate="{{ 'thePapyrusPrintApp.Civilite.' + client.civilite }}">{{ client.civilite }}</td>
                     <td>{{ client.nom }}</td>
                     <td>{{ client.prenom }}</td>
                     <td jhiTranslate="{{ 'thePapyrusPrintApp.Sexe.' + client.sexe }}">{{ client.sexe }}</td>
                     <td>{{ client.dateNaissance | date:'mediumDate' }}</td>
-                    <td>{{ client.telephone }}</td>
+                    <!-- <td>{{ client.telephone }}</td>
                     <td>{{ client.ville }}</td>
                     <td>{{ client.codePostal }}</td>
                     <td>{{ client.pays }}</td>
@@ -57,12 +57,12 @@
                     <td>{{ client.observation }}</td>
                     <td>
                         {{ client.user?.login }}
-                    </td>
-                    <td>
+                    </td> -->
+                    <!-- <td>
                         <div *ngIf="client.image">
                             <a [routerLink]="['/client', client.image?.id, 'view']" >{{ client.image?.id }}</a>
                         </div>
-                    </td>
+                    </td> -->
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

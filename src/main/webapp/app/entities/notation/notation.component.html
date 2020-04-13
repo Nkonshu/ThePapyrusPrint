@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <!-- <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th> -->
                     <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.notation.note">Note</span></th>
                     <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.notation.observation">Observation</span></th>
                     <th scope="col"></th>
@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let notation of notations ;trackBy: trackId">
-                    <td><a [routerLink]="['/notation', notation.id, 'view']">{{ notation.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/notation', notation.id, 'view']">{{ notation.id }}</a></td> -->
                     <td>{{ notation.note }}</td>
                     <td>{{ notation.observation }}</td>
                     <td class="text-right">

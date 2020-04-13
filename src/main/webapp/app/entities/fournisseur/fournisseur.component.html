@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th> -->
                     <th scope="col"  jhiSortBy="nom"><span jhiTranslate="thePapyrusPrintApp.fournisseur.nom">Nom</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="ville"><span jhiTranslate="thePapyrusPrintApp.fournisseur.ville">Ville</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="pays"><span jhiTranslate="thePapyrusPrintApp.fournisseur.pays">Pays</span> <fa-icon icon="sort"></fa-icon></th>
@@ -33,7 +33,7 @@
             </thead>
             <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
                 <tr *ngFor="let fournisseur of fournisseurs ;trackBy: trackId">
-                    <td><a [routerLink]="['/fournisseur', fournisseur.id, 'view']">{{ fournisseur.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/fournisseur', fournisseur.id, 'view']">{{ fournisseur.id }}</a></td> -->
                     <td>{{ fournisseur.nom }}</td>
                     <td>{{ fournisseur.ville }}</td>
                     <td>{{ fournisseur.pays }}</td>

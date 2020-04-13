@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
   roll_up = 'Roll-ups';
   affiches = 'Affiches';
   invitation_mariage = 'Faire-part de mariage';
-  carte_baby_shower = 'Cartes invitation de baby shower';
+  carte_baby_shower = 'Cartes dinvitation de baby shower';
   carte_invitation_anniversaire = 'Cartes invitation anniversaire';
   menu = 'Menus';
   souvenir_mariage = 'Souvenirs de mariage';

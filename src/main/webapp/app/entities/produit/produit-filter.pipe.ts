@@ -6,15 +6,15 @@ import { IProduit } from '../../shared/model/produit.model';
 })
 export class ProduitFilterPipe implements PipeTransform {
   transform(items: Array<IProduit> | undefined, nameSearch: string): any {
-    if (items && items.length) {
-      return items.filter(item => {
-        if (nameSearch && item.nom!.toLowerCase().includes(nameSearch.toLowerCase()) === false) {
-          return false;
-        }
-        return true;
+    if (!items) return [];
+    if (!nameSearch) return items;
+
+    return items.filter(item => {
+      return Object.keys(item).some(key => {
+        return String(item[key])
+          .toLowerCase()
+          .includes(nameSearch.toLowerCase());
       });
-    } else {
-      return items;
-    }
+    });
   }
 }

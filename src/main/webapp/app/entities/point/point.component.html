@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <!-- <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th> -->
                     <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.point.nombrePoint">Nombre Point</span></th>
                     <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.point.observation">Observation</span></th>
                     <th scope="col" ><span jhiTranslate="thePapyrusPrintApp.point.client">Client</span></th>
@@ -31,7 +31,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let point of points ;trackBy: trackId">
-                    <td><a [routerLink]="['/point', point.id, 'view']">{{ point.id }}</a></td>
+                    <!-- <td><a [routerLink]="['/point', point.id, 'view']">{{ point.id }}</a></td> -->
                     <td>{{ point.nombrePoint }}</td>
                     <td>{{ point.observation }}</td>
                     <td>
