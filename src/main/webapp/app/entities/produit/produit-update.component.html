@@ -6,10 +6,10 @@
             <div>
                 <jhi-alert-error></jhi-alert-error>
 
-                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
                     <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.nom" for="field_nom">Nom</label>
@@ -125,7 +125,7 @@
                 <div class="form-group">
                     <label jhiTranslate="thePapyrusPrintApp.produit.image" for="field_images">Image</label>
                     <select class="form-control" id="field_images" multiple name="images" formControlName="images">
-                        <option [ngValue]="getSelected(editForm.get('images')!.value, imageOption)" *ngFor="let imageOption of images; trackBy: trackById">{{ imageOption.id }}</option>
+                        <option [ngValue]="getSelected(editForm.get('images')!.value, imageOption)" *ngFor="let imageOption of images; trackBy: trackById">{{ imageOption.path }}</option>
                     </select>
                 </div>
 
@@ -133,7 +133,7 @@
                     <label class="form-control-label" jhiTranslate="thePapyrusPrintApp.produit.marque" for="field_marque">Marque</label>
                     <select class="form-control" id="field_marque" name="marque" formControlName="marque">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="marqueOption.id === editForm.get('marque')!.value?.id ? editForm.get('marque')!.value : marqueOption" *ngFor="let marqueOption of marques; trackBy: trackById">{{ marqueOption.id }}</option>
+                        <option [ngValue]="marqueOption.id === editForm.get('marque')!.value?.id ? editForm.get('marque')!.value : marqueOption" *ngFor="let marqueOption of marques; trackBy: trackById">{{ marqueOption.nom }}</option>
                     </select>
                 </div>
             </div>

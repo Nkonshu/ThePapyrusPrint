@@ -1,7 +1,9 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="facture">
-            <h2><span jhiTranslate="thePapyrusPrintApp.facture.detail.title">Facture</span> {{ facture.id }}</h2>
+            <h2><span jhiTranslate="thePapyrusPrintApp.facture.detail.title">Facture</span> 
+                <!-- {{ facture.id }} -->
+            </h2>
 
             <hr>
 
@@ -41,7 +43,7 @@
                 <dt><span jhiTranslate="thePapyrusPrintApp.facture.client">Client</span></dt>
                 <dd>
                     <div *ngIf="facture.client">
-                        <a [routerLink]="['/client', facture.client?.id, 'view']">{{ facture.client?.id }}</a>
+                        <a [routerLink]="['/client', facture.client?.id, 'view']">{{ facture.client?.nom }}</a>
                     </div>
                 </dd>
             </dl>

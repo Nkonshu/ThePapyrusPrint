@@ -1,7 +1,9 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="produit">
-            <h2><span jhiTranslate="thePapyrusPrintApp.produit.detail.title">Produit</span> {{ produit.id }}</h2>
+            <h2><span jhiTranslate="thePapyrusPrintApp.produit.detail.title">Produit</span>
+                 <!-- {{ produit.id }} -->
+                </h2>
 
             <hr>
 
@@ -49,13 +51,13 @@
                 <dt><span jhiTranslate="thePapyrusPrintApp.produit.image">Image</span></dt>
                 <dd>
                     <span *ngFor="let image of produit.images; let last = last">
-                        <a [routerLink]="['/image', image?.id, 'view']">{{ image.id }}</a>{{ last ? '' : ', ' }}
+                        <a [routerLink]="['/image', image?.id, 'view']">{{ image.path }}</a>{{ last ? '' : ', ' }}
                     </span>
                 </dd>
                 <dt><span jhiTranslate="thePapyrusPrintApp.produit.marque">Marque</span></dt>
                 <dd>
                     <div *ngIf="produit.marque">
-                        <a [routerLink]="['/marque', produit.marque?.id, 'view']">{{ produit.marque?.id }}</a>
+                        <a [routerLink]="['/marque', produit.marque?.id, 'view']">{{ produit.marque?.nom }}</a>
                     </div>
                 </dd>
             </dl>

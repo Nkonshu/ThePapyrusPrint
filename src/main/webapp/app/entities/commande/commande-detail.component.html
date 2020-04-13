@@ -1,7 +1,9 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="commande">
-            <h2><span jhiTranslate="thePapyrusPrintApp.commande.detail.title">Commande</span> {{ commande.id }}</h2>
+            <h2><span jhiTranslate="thePapyrusPrintApp.commande.detail.title">Commande</span>
+                 <!-- {{ commande.id }} -->
+                </h2>
 
             <hr>
 
@@ -19,13 +21,13 @@
                 <dt><span jhiTranslate="thePapyrusPrintApp.commande.produit">Produit</span></dt>
                 <dd>
                     <span *ngFor="let produit of commande.produits; let last = last">
-                        <a [routerLink]="['/produit', produit?.id, 'view']">{{ produit.id }}</a>{{ last ? '' : ', ' }}
+                        <a [routerLink]="['/produit', produit?.id, 'view']">{{ produit.nom }}</a>{{ last ? '' : ', ' }}
                     </span>
                 </dd>
                 <dt><span jhiTranslate="thePapyrusPrintApp.commande.fournisseur">Fournisseur</span></dt>
                 <dd>
                     <div *ngIf="commande.fournisseur">
-                        <a [routerLink]="['/fournisseur', commande.fournisseur?.id, 'view']">{{ commande.fournisseur?.id }}</a>
+                        <a [routerLink]="['/fournisseur', commande.fournisseur?.id, 'view']">{{ commande.fournisseur?.nom }}</a>
                     </div>
                 </dd>
             </dl>

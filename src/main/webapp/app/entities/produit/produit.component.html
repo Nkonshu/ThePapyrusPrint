@@ -40,7 +40,7 @@
       </div>
 </div><br>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-sm-4">
         <div class="card filters">
             <div class="card-header">
               <strong>Filtres</strong>
@@ -48,13 +48,37 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <label for="from">Produit :</label>
+                  <label for="from">Recherche :</label>
                   <input type="text" id="from" [(ngModel)]="nameSearch" class="form-control" name="produit">
                 </div>
                 <button class="btn btn-primary btn-block btn-sm">Rechercher</button>
               </form>
             </div>
-          </div><br>
+          </div>
+          <br>
+          <div class="card filters">
+            <div class="card-header">
+              <strong>Contacts</strong>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="gpnpapyrusprint@gmail.com" aria-describedby="validationTooltipUsernamePrepend" disabled>
+                </div>
+                <br>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="validationTooltipUsernamePrepend">Phone</span>
+                  </div>
+                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="(+33)7 83 49 03 40" aria-describedby="validationTooltipUsernamePrepend" disabled>
+                </div>
+              </form>
+            </div>
+          </div>
+          <br>
           <button id="jh-create-entity" class="btn btn-primary btn-block btn-sm float-right jh-create-entity create-produit" [routerLink]="['/produit/new']">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="thePapyrusPrintApp.produit.home.createLabel">
@@ -63,7 +87,7 @@
         </button>
     </div>
   
-    <div class="col-md-9">
+    <div class="col-sm-8">
         <!-- <h2 id="page-heading">
             <span jhiTranslate="thePapyrusPrintApp.produit.home.title">Produits</span>
         </h2> -->
@@ -77,8 +101,11 @@
         </div>
         <div *ngIf="produits?.length > 0">
             <div class="row">
-                <div class="col-md-4" *ngFor="let produit of produits | produitFilterPipe: nameSearch; trackBy: trackId">
+                <div class="col-md-4" *ngFor="let produit of produits | produitFilterPipe: nameSearch; trackBy: trackId;">
                   <jhi-cart-produit [produit]="produit"></jhi-cart-produit>
+                </div>
+                <div class="alert alert-warning" id="no-result" *ngIf="!(produits | produitFilterPipe: nameSearch).length" >
+                  <span jhiTranslate="thePapyrusPrintApp.produit.home.notFound">No produits found</span>
                 </div>
             </div>
     

@@ -36,7 +36,7 @@
                     <td>{{ point.observation }}</td>
                     <td>
                         <div *ngIf="point.client">
-                            <a [routerLink]="['/client', point.client?.id, 'view']" >{{ point.client?.id }}</a>
+                            <a [routerLink]="['/client', point.client?.id, 'view']" >{{ point.client?.nom }}</a>
                         </div>
                     </td>
                     <td class="text-right">
