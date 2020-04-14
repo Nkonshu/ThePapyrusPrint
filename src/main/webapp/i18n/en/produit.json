@@ -3,9 +3,14 @@
     "produit": {
       "home": {
         "title": "Produits",
-        "createLabel": "Create a new Produit",
+        "createLabel": "Create a new product",
         "createOrEditLabel": "Create or edit a Produit",
-        "notFound": "No Produits found"
+        "notFound": "No Produits found",
+        "clear": "Clear search bar",
+        "search": "Search",
+        "contacts": "Contacts",
+        "phone": "Phone",
+        "filter": "Filter"
       },
       "created": "A new Produit is created with identifier {{ param }}",
       "updated": "A Produit is updated with identifier {{ param }}",

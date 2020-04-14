@@ -43,22 +43,24 @@
     <div class="col-sm-4">
         <div class="card filters">
             <div class="card-header">
-              <strong>Filtres</strong>
+              <strong jhiTranslate="thePapyrusPrintApp.produit.home.filter">Filtres</strong>
             </div>
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <label for="from">Recherche :</label>
+                  <label for="from" jhiTranslate="thePapyrusPrintApp.produit.home.search">Recherche :</label>
                   <input type="text" id="from" [(ngModel)]="nameSearch" class="form-control" name="produit">
                 </div>
-                <button class="btn btn-primary btn-block btn-sm" (click)="clearSearch()">Effacer la barre de recherche</button>
+                <button class="btn btn-primary btn-block btn-sm" (click)="clearSearch()" jhiTranslate="thePapyrusPrintApp.produit.home.clear">Effacer la barre de recherche</button>
               </form>
             </div>
           </div>
           <br>
           <div class="card filters">
             <div class="card-header">
-              <strong>Contacts</strong>
+              <span jhiTranslate="thePapyrusPrintApp.produit.home.contacts">
+                <strong>Contacts</strong>
+              </span>
             </div>
             <div class="card-body">
               <form>
@@ -71,15 +73,25 @@
                 <br>
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="validationTooltipUsernamePrepend">Phone</span>
+                    <span class="input-group-text" id="validationTooltipUsernamePrepend" jhiTranslate="thePapyrusPrintApp.produit.home.phone">Phone</span>
                   </div>
                   <input type="text" class="form-control" id="validationTooltipUsername" placeholder="(+33) 7 94 38 02 50" aria-describedby="validationTooltipUsernamePrepend" disabled>
+                </div><br>
+                <div class="logo-container">
+                  <div class="row">
+                    <div>
+                      <ul class="social-network social-circle">
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>
           </div>
           <br>
-          <button id="jh-create-entity" class="btn btn-primary btn-block btn-sm float-right jh-create-entity create-produit" [routerLink]="['/produit/new']">
+          <button *jhiHasAnyAuthority="'ROLE_ADMIN'" id="jh-create-entity" class="btn btn-primary btn-block btn-sm float-right jh-create-entity create-produit" [routerLink]="['/produit/new']">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="thePapyrusPrintApp.produit.home.createLabel">
             Create a new Produit
