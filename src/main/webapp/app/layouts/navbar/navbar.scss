@@ -52,3 +52,17 @@ Logo styles
   background: url('../../../content/images/logo-jhipster2.png') no-repeat center center;
   background-size: contain;
 }
+
+#inner1 {
+  float: left;
+}
+
+#inner2 {
+  float: left;
+  clear: left;
+}
+
+#slogan {
+  font-size: smaller;
+  margin-left: 0.4rem;
+}
