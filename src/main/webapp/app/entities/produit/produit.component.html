@@ -9,24 +9,24 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="../../../content/images/caroussel1.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
+            <!-- <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>  
+            </div>   -->
         </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="../../../content/images/caroussel2.jpg" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
+            <!-- <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>  
+            </div>   -->
         </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="../../../content/images/caroussel3.jpg" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
+            <!-- <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>  
+            </div>   -->
         </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -51,7 +51,7 @@
                   <label for="from">Recherche :</label>
                   <input type="text" id="from" [(ngModel)]="nameSearch" class="form-control" name="produit">
                 </div>
-                <button class="btn btn-primary btn-block btn-sm">Rechercher</button>
+                <button class="btn btn-primary btn-block btn-sm" (click)="clearSearch()">Effacer la barre de recherche</button>
               </form>
             </div>
           </div>
@@ -66,14 +66,14 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                   </div>
-                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="gpnpapyrusprint@gmail.com" aria-describedby="validationTooltipUsernamePrepend" disabled>
+                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="thepapyrusprint@gmail.com" aria-describedby="validationTooltipUsernamePrepend" disabled>
                 </div>
                 <br>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">Phone</span>
                   </div>
-                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="(+33)7 83 49 03 40" aria-describedby="validationTooltipUsernamePrepend" disabled>
+                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="(+33) 7 94 38 02 50" aria-describedby="validationTooltipUsernamePrepend" disabled>
                 </div>
               </form>
             </div>

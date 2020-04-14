@@ -43,7 +43,7 @@ export const produitRoute: Routes = [
       pagingParams: JhiResolvePagingParams
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [],
       defaultSort: 'id,asc',
       pageTitle: 'thePapyrusPrintApp.produit.home.title'
     },
@@ -56,7 +56,7 @@ export const produitRoute: Routes = [
       produit: ProduitResolve
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [],
       pageTitle: 'thePapyrusPrintApp.produit.home.title'
     },
     canActivate: [UserRouteAccessService]

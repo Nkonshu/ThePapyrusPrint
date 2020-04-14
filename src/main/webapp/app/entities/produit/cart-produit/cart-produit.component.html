@@ -3,9 +3,6 @@
     <!-- <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="produit.imageUrl" /> -->
   
     <div class="card-body">
-      <p class="card-text">
-        <strong>{{ produit.prixAchatHt | currency:'XAF' | space }}</strong>
-      </p>
       <!-- <p><a [routerLink]="['/produit', produit.id, 'view']">{{ produit.id }}</a></p> -->
       <!-- <p>
         <div *ngIf="produit.marque">
@@ -13,9 +10,14 @@
         </div>
       </p> -->
       <!-- <p>{{ produit.images[0].path }}</p> -->
-      <p>{{ produit.nom }}</p>
+      <p>
+        <strong>{{ produit.nom }}</strong>
+      </p>
+      <p class="card-text">
+        {{ produit.prixVenteTvac  | currency:'XAF' }}
+      </p>
       <!-- <p>{{ produit.prixVenteHtva  | currency:'XAF' }}</p>
-      <p>{{ produit.prixVenteTvac  | currency:'XAF' }}</p>
+      <p>{{ produit.prixAchatHt | currency:'XAF' | space }}</p>
       <p>{{ produit.tauxTvaAchat }}</p>
       <p>{{ produit.tauxTva }}</p>
       <p>{{ produit.observation }}</p>

@@ -122,4 +122,8 @@ export class ProduitComponent implements OnInit, OnDestroy {
   protected onError(): void {
     this.ngbPaginationPage = this.page;
   }
+
+  clearSearch(): void {
+    this.nameSearch = '';
+  }
 }
