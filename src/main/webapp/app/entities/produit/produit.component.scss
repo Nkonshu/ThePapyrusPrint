@@ -1,3 +1,5 @@
+/* Start Carrousel */
+
 .carousel-item img {
   max-height: 27rem;
 }
@@ -5,75 +7,6 @@
 .carousel {
   width: 100%;
 }
-
-ul.social-network {
-  list-style: none;
-  display: inline;
-  margin-left: 0 !important;
-  padding: 0;
-}
-ul.social-network li {
-  display: inline;
-  margin: 0 5px;
-}
-
-.social-network a.icoFacebook:hover {
-  background-color: #3b5998;
-}
-.social-network a.icoInstagram:hover {
-  background-color: #ee82ee;
-}
-
-.social-network a.icoFacebook:hover i,
-.social-network a.icoVimeo:hover i {
-  color: #fff;
-}
-a.socialIcon:hover,
-.socialHoverClass {
-  color: #44bcdd;
-}
-
-.social-circle li a {
-  display: inline-block;
-  position: relative;
-  margin: 0 auto 0 auto;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  background-color: #d3d3d3;
-}
-.social-circle li i {
-  margin: 0;
-  line-height: 50px;
-  text-align: center;
-}
-
-.social-circle li a:hover i,
-.triggeredHover {
-  -moz-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -ms--transform: rotate(360deg);
-  transform: rotate(360deg);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
-}
-.social-circle i {
-  color: #fff;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  transition: all 0.8s;
-}
-
-/* Start Carrousel */
 
 ul.slides {
   display: block;
@@ -202,54 +135,105 @@ input:checked + .slide-container .nav label {
 /*End Carrousel*/
 
 /*Start social media*/
-/* Start Feed In Social Media */
-.feed-in {
-  background-color: #ff003d;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-family: arial;
-}
 
-ul {
+$facebook-color: #0cf;
+$instagram-color: #c13584;
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
   padding: 0;
 }
 
-.feed-in ul li {
-  list-style: none;
-  float: left;
-  margin: 15px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  line-height: 150px;
-  text-align: center;
-  font-size: 40px;
-  background-color: #fff;
-  position: relative;
-  transition: all 0.5s ease-in-out;
-  z-index: 1;
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
 }
 
-.feed-in ul li:hover {
+.facebook-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
   color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $facebook-color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($facebook-color, 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
 }
 
-.feed-in ul li:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ff003d;
-  border-radius: 50%;
-  transition: all 0.5s ease-in-out;
-  transform: scale(0);
-  z-index: -1;
-}
-
-.feed-in ul li:hover:before {
-  transform: scale(0.9);
+.instagram-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $instagram-color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($instagram-color, 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
 }
 /*End Social media*/
