@@ -3,73 +3,7 @@
         <!-- {{ produit!.id }} -->
     </h2>
     <hr>
-    <div id="left" class="col-sm-4">
-        <jhi-alert-error></jhi-alert-error>
-        <dl class="row-md jh-entity-details">
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.nom">Nom</span></dt>
-            <dd>
-                <span>{{ produit!.nom }}</span>
-            </dd>
-            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteHtva">Prix Vente Htva</span></dt>
-            <dd>
-                <span>{{ produit!.prixVenteHtva }}</span>
-            </dd> -->
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteTvac">Prix Vente Tvac</span></dt>
-            <dd>
-                <span>{{ produit!.prixVenteTvac  | currency:'XAF' | space }}</span>
-            </dd>
-            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixAchatHt">Prix Achat Ht</span></dt>
-            <dd>
-                <span>{{ produit!.prixAchatHt }}</span>
-            </dd>
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.tauxTvaAchat">Taux Tva Achat</span></dt>
-            <dd>
-                <span>{{ produit!.tauxTvaAchat }}</span>
-            </dd>
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.tauxTva">Taux Tva</span></dt>
-            <dd>
-                <span>{{ produit!.tauxTva }}</span>
-            </dd> -->
-            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.observation">Observation</span></dt>
-            <dd>
-                <span>{{ produit!.observation }}</span>
-            </dd> -->
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.description">Description</span></dt>
-            <dd>
-                <span>{{ produit!.description }}</span>
-            </dd>
-            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.notation">Notation</span></dt>
-            <dd>
-                <span *ngFor="let notation of produit.notations; let last = last">
-                    <a [routerLink]="['/notation', notation?.id, 'view']">{{ notation.note }}</a>{{ last ? '' : ', ' }}
-                </span>
-            </dd> -->
-            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.image">Image</span></dt>
-            <dd>
-                <span *ngFor="let image of produit.images; let last = last">
-                    <a [routerLink]="['/image', image?.id, 'view']">{{ image.path }}</a>{{ last ? '' : ', ' }}
-                </span>
-            </dd>
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.marque">Marque</span></dt>
-            <dd>
-                <div *ngIf="produit.marque">
-                    <a [routerLink]="['/marque', produit.marque?.id, 'view']">{{ produit.marque?.nom }}</a>
-                </div>
-            </dd> -->
-        </dl>
-        <button type="submit"
-                (click)="previousState()"
-                class="btn btn-info">
-            <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
-        </button>
-    
-        <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="button"
-                [routerLink]="['/produit', produit.id, 'edit']"
-                class="btn btn-primary">
-            <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
-        </button>
-    </div>
-    <div id="right">
+    <div >
         <div class="col-sm-10">
             <div id="content-slider">
                 <div class="wrap-slider">	
@@ -178,5 +112,71 @@
                 </div>		
               </div>
         </div>
+    </div>
+    <div id="" class="col-sm-4">
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="row-md jh-entity-details">
+            <dt><span jhiTranslate="thePapyrusPrintApp.produit.nom">Nom</span></dt>
+            <dd>
+                <span>{{ produit!.nom }}</span>
+            </dd>
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteHtva">Prix Vente Htva</span></dt>
+            <dd>
+                <span>{{ produit!.prixVenteHtva }}</span>
+            </dd> -->
+            <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteTvac">Prix Vente Tvac</span></dt>
+            <dd>
+                <span>{{ produit!.prixVenteTvac  | currency:'XAF' | space }}</span>
+            </dd>
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixAchatHt">Prix Achat Ht</span></dt>
+            <dd>
+                <span>{{ produit!.prixAchatHt }}</span>
+            </dd>
+            <dt><span jhiTranslate="thePapyrusPrintApp.produit.tauxTvaAchat">Taux Tva Achat</span></dt>
+            <dd>
+                <span>{{ produit!.tauxTvaAchat }}</span>
+            </dd>
+            <dt><span jhiTranslate="thePapyrusPrintApp.produit.tauxTva">Taux Tva</span></dt>
+            <dd>
+                <span>{{ produit!.tauxTva }}</span>
+            </dd> -->
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.observation">Observation</span></dt>
+            <dd>
+                <span>{{ produit!.observation }}</span>
+            </dd> -->
+            <dt><span jhiTranslate="thePapyrusPrintApp.produit.description">Description</span></dt>
+            <dd>
+                <span>{{ produit!.description }}</span>
+            </dd>
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.notation">Notation</span></dt>
+            <dd>
+                <span *ngFor="let notation of produit.notations; let last = last">
+                    <a [routerLink]="['/notation', notation?.id, 'view']">{{ notation.note }}</a>{{ last ? '' : ', ' }}
+                </span>
+            </dd> -->
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.image">Image</span></dt>
+            <dd>
+                <span *ngFor="let image of produit.images; let last = last">
+                    <a [routerLink]="['/image', image?.id, 'view']">{{ image.path }}</a>{{ last ? '' : ', ' }}
+                </span>
+            </dd>
+            <dt><span jhiTranslate="thePapyrusPrintApp.produit.marque">Marque</span></dt>
+            <dd>
+                <div *ngIf="produit.marque">
+                    <a [routerLink]="['/marque', produit.marque?.id, 'view']">{{ produit.marque?.nom }}</a>
+                </div>
+            </dd> -->
+        </dl>
+        <button type="submit"
+                (click)="previousState()"
+                class="btn btn-info">
+            <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+    
+        <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="button"
+                [routerLink]="['/produit', produit.id, 'edit']"
+                class="btn btn-primary">
+            <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
     </div>
 </div>

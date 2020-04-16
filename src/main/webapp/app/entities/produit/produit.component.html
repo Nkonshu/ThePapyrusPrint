@@ -99,52 +99,28 @@
 <br>
 <div class="row">
   <div class="col-sm-4">
-    <div class="card filters">
-      
-<div class="container">
-  <div class="row header">
-    <h1 class="text">Passez vos commandes</h1>
-    <h3 class="text">ThePapyrusPrint, démarquez-vous !</h3>
-    <h5 class="text">Whatsapp :  (+33) 7 94 38 02 50</h5>
-    <h5 class="text">Email : thepapyrusprint@gmail.com</h5>
-  </div>
-  <div class="row body">
-    <form>
-      <ul> 
-        
-        <li>
-          <p class="left">
-            <!-- <label for="first_name">first name</label>
-            <input type="text" name="first_name" placeholder="John" /> -->
-            <label for="from" jhiTranslate="thePapyrusPrintApp.produit.home.search">Recherche :</label>
-            <input type="text" id="from" [(ngModel)]="nameSearch" class="form-control" name="produit">
-          </p>
-        </li>
-        <li>
-          <p class="pull-right">
-            <label for="last_name">Prix :</label>
-            <input type="text" name="last_name" />    
-          </p>
-        </li>
-        <!-- <li>
-          <input class="btn btn-submit" type="submit" (click)="clearSearch()" jhiTranslate="thePapyrusPrintApp.produit.home.clear"/>
-        </li> -->
-        <!-- <button class="btn btn-submit" >Effacer la barre de recherche</button>   -->
-        <li><div class="divider"></div></li>
-          <a href="https://www.facebook.com" class="facebook-button" onclick="window.open(this.href); return false;">Facebook</a>
-          <a href="https://www.instagram.com" class="instagram-button" onclick="window.open(this.href); return false;">Instagram</a>
-          <!-- <a class="facebook-button">(+33)794380250</a>
-          <a class="instagram-button">thepapyrusprint@gmail.com</a> -->
-        <li><div class="divider"></div></li>
-        <li>
-          <label for="comments">A propos de nous :</label>
-          <p><strong>ThePapyrusPrint</strong> est une société qui aide les personnes, les petites, moyennes et grandes entreprises à créer des <strong>supports marketing</strong> personnalisés avec des <strong>graphismes</strong> au goût du jour conçus par des experts, afin de les aider à toucher leur cible à l’aide d’un <strong>support professionnel</strong>, simple, efficace et adapté à leurs activités.</p>
-        </li>
+    <form class="search">
+      <input type="text" class="searchTerm" placeholder="Rechercher" id="from" [(ngModel)]="nameSearch" name="produit">
+    </form>
+    <br>
+    <div class="card">
+      <img src="../../../content/images/image-contact.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">A propos de nous</h5>
+        <p class="card-text"><strong>ThePapyrusPrint</strong> est une société qui aide les personnes, les petites, moyennes et grandes entreprises à créer des <strong>supports marketing</strong> personnalisés avec des <strong>graphismes</strong> au goût du jour conçus par des experts, afin de les aider à toucher leur cible à l’aide d’un <strong>support professionnel</strong>, simple, efficace et adapté à leurs activités.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <strong><li class="list-group-item">Passez vos commandes</li></strong>
+        <li class="list-group-item">Whatsapp :  (+33) 7 94 38 02 50</li>
+        <li class="list-group-item">Email : thepapyrusprint@gmail.com</li>
       </ul>
-    </form>  
-  </div>
-</div>
+      <div class="card-body">
+
+        <a href="https://www.facebook.com" class="facebook-button" onclick="window.open(this.href); return false;">Facebook</a>
+        <a href="https://www.instagram.com" class="instagram-button" onclick="window.open(this.href); return false;">Instagram</a>
+      </div>
     </div>
+
       <!-- <div class="card filters">
           <div class="card-header">
             <strong jhiTranslate="thePapyrusPrintApp.produit.home.filter">Filtres</strong>
