@@ -1,6 +1,3 @@
-
-
-
 <div id="content-slider">
   <div class="wrap-slider">	
     <!-- ===== Thumbnail ControlNav ======= -->			
@@ -28,36 +25,32 @@
     <span id="b-1" class="th" tabindex="10">
       <img src="../../../content/images/caroussel1.jpg" alt="" id="p-1">
       <div class="title-1">
-        <h1>PAK FA T-50</h1>
-        <p>Stealth multirole fighter</p>
-        <a href="">read more...</a>
+        <h1>Invitations de fêtes</h1>
+        <p>Cartes de visite carrées</p>
       </div>
     </span>
 
     <span id="b-2" class="th" tabindex="11">
       <img src="../../../content/images/caroussel2.jpg" alt="" id="p-2">
       <div class="title-2">
-        <h1>Kamov Ka-50 "Black Shark"</h1>
-        <p>Attack helicopter</p>
-        <a href="">read more...</a>
+        <h1>Flyers et dépliants</h1>
+        <p>Chemises porte-documents</p>
       </div>
     </span>			
 
     <span id="b-3" class="th" tabindex="12">
       <img src="../../../content/images/caroussel3.jpg" alt="" id="p-3">
       <div class="title-3">
-        <h1>Sukhoi Su-27</h1> 
-        <p>Air superiority fighter</p> 
-        <a href="">read more...</a>
+        <h1>ervices graphiques</h1> 
+        <p>Souvenirs de mariage</p>
       </div>
     </span>
 
     <span id="b-4" class="th" tabindex="13">
       <img src="../../../content/images/caroussel1.jpg" alt="" id="p-4">
       <div class="title-4">
-        <h1>Sukhoi Su-27</h1> 
-        <p>Air superiority fighter</p> 
-        <a href="">read more...</a>
+        <h1>Faire-part de mariage</h1> 
+        <p>Cartes d'invitation anniversaire</p>
       </div>
     </span>
 
@@ -68,36 +61,32 @@
 
         <figure>
           <figcaption class="title-1">
-            <h1>PAK FA T-50</h1>
-            <p>Stealth multirole fighter</p>
-            <a href="">read more...</a>
+            <h1>Roll-ups</h1>
+            <p>Faire-part de mariage</p>
           </figcaption>
           <img src="../../../content/images/caroussel1.jpg" alt="" id="i-1" class="f">						
         </figure>
 
         <figure>
           <figcaption class="title-2">
-            <h1>Kamov Ka-50 "Black Shark"</h1>
-            <p>Attack helicopter</p>
-            <a href="">read more...</a>
+            <h1>Magic mugs</h1>
+            <p>Banderoles</p>
           </figcaption>
           <img src="../../../content/images/caroussel2.jpg" alt="" id="i-2" class="f">						
         </figure>
 
         <figure>
           <figcaption class="title-3">
-            <h1>Sukhoi Su-27</h1> 
-            <p>Air superiority fighter</p> 
-            <a href="">read more...</a>
+            <h1>Cartes d'invitation de baby shower</h1> 
+            <p>Banderoles</p> 
           </figcaption>
           <img src="../../../content/images/caroussel3.jpg" alt="" id="i-3" class="f">						
         </figure>
 
         <figure>
           <figcaption class="title-4">
-            <h1>Sukhoi Su-27</h1> 
-            <p>Air superiority fighter</p> 
-            <a href="">read more...</a>
+            <h1>Cartons plumes</h1> 
+            <p>Cartes de visite carrées</p>
           </figcaption>
           <img src="../../../content/images/caroussel1.jpg" alt="" id="i-4" class="f">						
         </figure>
@@ -181,7 +170,7 @@
       <div *ngIf="produits?.length > 0">
           <div class="row">
               <div class="col-md-4" *ngFor="let produit of produits | produitFilterPipe: nameSearch; trackBy: trackId;">
-                <jhi-cart-produit [produit]="produit"></jhi-cart-produit>
+                <jhi-cart-produit [produit]="produit"></jhi-cart-produit><br>
               </div>
               <div class="alert alert-warning" id="no-result" *ngIf="!(produits | produitFilterPipe: nameSearch).length" >
                 <span jhiTranslate="thePapyrusPrintApp.produit.home.notFound">No produits found</span>

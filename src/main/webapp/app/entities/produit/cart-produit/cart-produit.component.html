@@ -1,8 +1,28 @@
-<div class="card mb-4 shadow-sm">
-    <img class="bd-placeholder-img card-img-top p-2" width="100%" src="../../../../content/images/carte.png" />
-    <!-- <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="produit.imageUrl" /> -->
-  
-    <div class="card-body">
+<!-- Card -->
+<div class="card ovf-hidden">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="../../../../content/images/carte.png" alt="Card image cap">
+    <a>
+      <div class="mask waves-effect waves-light rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h6 class="text">{{ produit.nom }}</h6>
+    <h6 class="price">{{ produit.prixVenteTvac  | currency:'XAF' }}</h6>
+    <hr>
+    <!-- Text -->
+    <!-- <p>{{ produit.prixVenteHtva  | currency:'XAF' }}</p>
+      <p>{{ produit.prixAchatHt | currency:'XAF' | space }}</p>
+      <p>{{ produit.tauxTvaAchat }}</p>
+      <p>{{ produit.tauxTva }}</p>
+      <p>{{ produit.observation }}</p>
+      <p class="card-text">{{ produit.description }}</p> -->
       <!-- <p><a [routerLink]="['/produit', produit.id, 'view']">{{ produit.id }}</a></p> -->
       <!-- <p>
         <div *ngIf="produit.marque">
@@ -10,39 +30,32 @@
         </div>
       </p> -->
       <!-- <p>{{ produit.images[0].path }}</p> -->
-      <p class="text">
-        <strong>{{ produit.nom }}</strong>
-      </p>
-      <p class="price" >
-        {{ produit.prixVenteTvac  | currency:'XAF' }}
-      </p>
-      <!-- <p>{{ produit.prixVenteHtva  | currency:'XAF' }}</p>
-      <p>{{ produit.prixAchatHt | currency:'XAF' | space }}</p>
-      <p>{{ produit.tauxTvaAchat }}</p>
-      <p>{{ produit.tauxTva }}</p>
-      <p>{{ produit.observation }}</p>
-      <p class="card-text">{{ produit.description }}</p> -->
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <!-- <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+      content.</p>
+
+
+    <a class="link-text">
+      <button type="submit" [routerLink]="['/produit', produit.id, 'view']" class="btn btn-info btn-sm">
+        <fa-icon icon="eye"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+      </button>
+      <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" [routerLink]="['/produit', produit.id, 'edit']" class="btn btn-primary btn-sm">
+        <fa-icon icon="pencil-alt"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+      <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" (click)="delete(produit)" class="btn btn-danger btn-sm">
+        <fa-icon icon="times"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+      </button>
+                <!-- <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">
             Add to Cart
           </button> -->
           <!-- <button type="button" class="btn btn-sm btn-outline-secondary product-btn">
               View Details
           </button> -->
-          <button type="submit" [routerLink]="['/produit', produit.id, 'view']" class="btn btn-info btn-sm">
-            <fa-icon icon="eye"></fa-icon>
-            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-          </button>
-          <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" [routerLink]="['/produit', produit.id, 'edit']" class="btn btn-primary btn-sm">
-            <fa-icon icon="pencil-alt"></fa-icon>
-            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-          </button>
-          <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" (click)="delete(produit)" class="btn btn-danger btn-sm">
-            <fa-icon icon="times"></fa-icon>
-            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-          </button>
-        </div>
-      </div>
-    </div>
+    </a>
+
   </div>
+
+</div>
+<!-- Card -->
