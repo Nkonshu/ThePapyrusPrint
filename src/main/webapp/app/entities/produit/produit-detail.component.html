@@ -2,116 +2,55 @@
     <h2><span jhiTranslate="thePapyrusPrintApp.produit.detail.title">Produit</span>
         <!-- {{ produit!.id }} -->
     </h2>
-    <hr>
-    <div >
+    <!-- <hr> -->
         <div class="col-sm-10">
-            <div id="content-slider">
-                <div class="wrap-slider">	
-                  <!-- ===== Thumbnail ControlNav ======= -->			
-                  <input type="radio" id="a-1" name="a" >			
-                  <input type="radio" id="a-2" name="a" >			
-                  <input type="radio" id="a-3" name="a" >
-                  <input type="radio" id="a-4" name="a" >
-              
-                  <nav id="main">
-                    <label for="a-1" class="first"></label>
-                    <label for="a-2" class="first"></label>
-                    <label for="a-3" class="first"></label>
-                    <label for="a-4" class="first"></label>
-                  </nav>
-                  <!-- =================================== -->	
-                  <nav id="control">
-                    <label for="a-1"></label>
-                    <label for="a-2"></label>
-                    <label for="a-3"></label>
-                    <label for="a-4"></label>
-                  </nav>
-                  <!-- =================================== -->
-              
-                  <!-- 	IMAGE NAVIGATION pic -->
-                  <!-- <span id="b-1" class="th" tabindex="10">
-                    <img src="../../../content/images/carte.png" alt="" id="p-1">
-                    <div class="title-1">
-                      <h1>PAK FA T-50</h1>
-                      <p>Stealth multirole fighter</p>
-                      <a href="">read more...</a>
+              <article id="slider">
+                <input checked type='radio' name='slider' id='slide1'/>
+                <input type='radio' name='slider' id='slide2'/>
+                <input type='radio' name='slider' id='slide3'/>
+                <input type='radio' name='slider' id='slide4'/>
+                <input type='radio' name='slider' id='slide5'/>
+                <div id="slides">
+                    <div id="container">
+                        <div class="inner">
+                            <article>
+                            <img src="../../../content/images/carte.png"/>
+                            </article>
+                            <article>
+                            
+                            <img src="../../../content/images/carte.png"/>
+                            </article>
+                            <article>
+                            
+                            <img src="../../../content/images/carte2.png"/>
+                            </article>
+                            <article>
+                           
+                            <img src="../../../content/images/carte3.png"/>
+                            </article>
+                            <article>
+                            
+                            <img src="../../../content/images/carte.png"/>
+                            </article>
+                        </div>
                     </div>
-                  </span>
-              
-                  <span id="b-2" class="th" tabindex="11">
-                    <img src="../../../content/images/carte2.png" alt="" id="p-2">
-                    <div class="title-2">
-                      <h1>Kamov Ka-50 "Black Shark"</h1>
-                      <p>Attack helicopter</p>
-                      <a href="">read more...</a>
-                    </div>
-                  </span>			
-              
-                  <span id="b-3" class="th" tabindex="12">
-                    <img src="../../../content/images/carte3.png" alt="" id="p-3">
-                    <div class="title-3">
-                      <h1>Sukhoi Su-27</h1> 
-                      <p>Air superiority fighter</p> 
-                      <a href="">read more...</a>
-                    </div>
-                  </span>
-              
-                  <span id="b-4" class="th" tabindex="13">
-                    <img src="../../../content/images/carte.png" alt="" id="p-4">
-                    <div class="title-4">
-                      <h1>Sukhoi Su-27</h1> 
-                      <p>Air superiority fighter</p> 
-                      <a href="">read more...</a>
-                    </div>
-                  </span> -->
-              
-                  <!-- ===== IMages ======= -->							
-              
-                  <div class="slider">
-                    <div class="inset">
-              
-                      <figure>
-                        <!-- <figcaption class="title-1">
-                          <h1>PAK FA T-50</h1>
-                          <p>Stealth multirole fighter</p>
-                          <a href="">read more...</a>
-                        </figcaption> -->
-                        <img src="../../../content/images/carte.png" alt="" id="i-1" class="f">						
-                      </figure>
-              
-                      <figure>
-                        <!-- <figcaption class="title-2">
-                          <h1>Kamov Ka-50 "Black Shark"</h1>
-                          <p>Attack helicopter</p>
-                          <a href="">read more...</a>
-                        </figcaption> -->
-                        <img src="../../../content/images/carte2.png" alt="" id="i-2" class="f">						
-                      </figure>
-              
-                      <figure>
-                        <!-- <figcaption class="title-3">
-                          <h1>Sukhoi Su-27</h1> 
-                          <p>Air superiority fighter</p> 
-                          <a href="">read more...</a>
-                        </figcaption> -->
-                        <img src="../../../content/images/carte3.png" alt="" id="i-3" class="f">						
-                      </figure>
-              
-                      <figure>
-                        <!-- <figcaption class="title-4">
-                          <h1>Sukhoi Su-27</h1> 
-                          <p>Air superiority fighter</p> 
-                          <a href="">read more...</a>
-                        </figcaption> -->
-                        <img src="../../../content/images/carte.png" alt="" id="i-4" class="f">						
-                      </figure>
-                              
-                    </div>
-                  </div>					
-              
-                </div>		
-              </div>
-        </div>
+                </div>
+                <div id="commands">
+                    <label for='slide1'></label>
+                    <label for='slide2'></label>
+                    <label for='slide3'></label>
+                    <label for='slide4'></label>
+                    <label for='slide5'></label>
+                </div>
+                <div id="active">
+                    <label for='slide1'></label>
+                    <label for='slide2'></label>
+                    <label for='slide3'></label>
+                    <label for='slide4'></label>
+                    <label for='slide5'></label>
+                </div>
+                </article>
+        
     </div>
     <div id="" class="col-sm-4">
         <jhi-alert-error></jhi-alert-error>
@@ -124,10 +63,10 @@
             <dd>
                 <span>{{ produit!.prixVenteHtva }}</span>
             </dd> -->
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteTvac">Prix Vente Tvac</span></dt>
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixVenteTvac">Prix Vente Tvac</span></dt>
             <dd>
                 <span>{{ produit!.prixVenteTvac  | currency:'XAF' | space }}</span>
-            </dd>
+            </dd> -->
             <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.prixAchatHt">Prix Achat Ht</span></dt>
             <dd>
                 <span>{{ produit!.prixAchatHt }}</span>
@@ -144,10 +83,10 @@
             <dd>
                 <span>{{ produit!.observation }}</span>
             </dd> -->
-            <dt><span jhiTranslate="thePapyrusPrintApp.produit.description">Description</span></dt>
+            <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.description">Description</span></dt>
             <dd>
                 <span>{{ produit!.description }}</span>
-            </dd>
+            </dd> -->
             <!-- <dt><span jhiTranslate="thePapyrusPrintApp.produit.notation">Notation</span></dt>
             <dd>
                 <span *ngFor="let notation of produit.notations; let last = last">
