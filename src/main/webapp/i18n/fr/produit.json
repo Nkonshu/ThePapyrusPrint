@@ -6,8 +6,8 @@
         "createLabel": "Créer un nouveau produit",
         "createOrEditLabel": "Créer ou éditer un Produit",
         "notFound": "Aucun Produit trouvé",
-        "clear": "Effacer la barre de recherche",
-        "search": "Recherche",
+        "clear": "Effacer",
+        "search": "Recherche :",
         "contacts": "Contactez nous pour vos commandes",
         "phone": "Tel",
         "filter": "Filtre"
