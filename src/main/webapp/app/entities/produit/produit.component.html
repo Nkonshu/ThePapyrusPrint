@@ -41,7 +41,7 @@
     <span id="b-3" class="th" tabindex="12">
       <img src="../../../content/images/caroussel3.jpg" alt="" id="p-3">
       <div class="title-3">
-        <h1>ervices graphiques</h1> 
+        <h1>Services graphiques</h1> 
         <p>Souvenirs de mariage</p>
       </div>
     </span>
@@ -100,17 +100,25 @@
 <div class="row">
   <div class="col-sm-4">
     <form class="search">
-      <input type="text" class="searchTerm" placeholder="Rechercher" id="from" [(ngModel)]="nameSearch" name="produit">
+      <input type="text" class="searchTerm" placeholder="Rechercher, Ex : carte 2000 FCFA" id="from" [(ngModel)]="nameSearch" name="produit">
     </form>
     <br>
     <div class="card">
       <img src="../../../content/images/image-contact.jpg" class="card-img-top" alt="...">
+      <div class="neon">
+        <span class="text" data-text="A propos de nous">A propos de nous</span>
+        <span class="gradient"></span>
+        <span class="spotlight"></span>
+      </div>
       <div class="card-body">
-        <h5 class="card-title">A propos de nous</h5>
         <p class="card-text"><strong>ThePapyrusPrint</strong> est une société qui aide les personnes, les petites, moyennes et grandes entreprises à créer des <strong>supports marketing</strong> personnalisés avec des <strong>graphismes</strong> au goût du jour conçus par des experts, afin de les aider à toucher leur cible à l’aide d’un <strong>support professionnel</strong>, simple, efficace et adapté à leurs activités.</p>
       </div>
       <ul class="list-group list-group-flush">
-        <strong><li class="list-group-item">Passez vos commandes</li></strong>
+        <div class="neon">
+          <span class="text" data-text="Passez vos commandes">Passez vos commandes</span>
+          <span class="gradient"></span>
+          <span class="spotlight"></span>
+        </div>
         <li class="list-group-item">Whatsapp :  (+33) 7 94 38 02 50</li>
         <li class="list-group-item">Email : thepapyrusprint@gmail.com</li>
       </ul>
@@ -120,54 +128,6 @@
         <a href="https://www.instagram.com" class="instagram-button" onclick="window.open(this.href); return false;">Instagram</a>
       </div>
     </div>
-
-      <!-- <div class="card filters">
-          <div class="card-header">
-            <strong jhiTranslate="thePapyrusPrintApp.produit.home.filter">Filtres</strong>
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="from" jhiTranslate="thePapyrusPrintApp.produit.home.search">Recherche :</label>
-                <input type="text" id="from" [(ngModel)]="nameSearch" class="form-control" name="produit">
-              </div>
-              <button class="btn btn-primary btn-block btn-sm" (click)="clearSearch()" jhiTranslate="thePapyrusPrintApp.produit.home.clear">Effacer la barre de recherche</button>
-            </form>
-          </div>
-        </div>
-        <br>
-        <div class="card filters">
-          <div class="card-header">
-              <strong jhiTranslate="thePapyrusPrintApp.produit.home.contacts">Contacts</strong>
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                </div>
-                <input type="text" class="form-control" id="validationTooltipUsername" placeholder="thepapyrusprint@gmail.com" aria-describedby="validationTooltipUsernamePrepend" disabled>
-              </div>
-              <br>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="validationTooltipUsernamePrepend" jhiTranslate="thePapyrusPrintApp.produit.home.phone">Phone</span>
-                </div>
-                <input type="text" class="form-control" id="validationTooltipUsername" placeholder="(+33) 7 94 38 02 50" aria-describedby="validationTooltipUsernamePrepend" disabled>
-              </div><br>
-              <div class="logo-container">
-                <div class="row">
-                  <div>
-                    <ul class="social-network">
-                      <li><a href="https://www.facebook.com" class="facebook-button" onclick="window.open(this.href); return false;">Facebook</a></a></li>
-                      <li><a href="https://www.instagram.com" class="instagram-button" onclick="window.open(this.href); return false;">Instagram</a></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div> -->
         <br>
         <button *jhiHasAnyAuthority="'ROLE_ADMIN'" id="jh-create-entity" class="btn btn-primary btn-block btn-sm float-right jh-create-entity create-produit" [routerLink]="['/produit/new']">
           <fa-icon icon="plus"></fa-icon>
@@ -178,9 +138,6 @@
   </div>
 
   <div class="col-sm-8">
-      <!-- <h2 id="page-heading">
-          <span jhiTranslate="thePapyrusPrintApp.produit.home.title">Produits</span>
-      </h2> -->
   
       <jhi-alert-error></jhi-alert-error>
   
@@ -198,13 +155,6 @@
                 <span jhiTranslate="thePapyrusPrintApp.produit.home.notFound">No produits found</span>
               </div>
           </div>
-  
-          <!-- <div class="row justify-content-center">
-              <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
-          </div>
-          <div class="row justify-content-center">
-              <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
-          </div> -->
       </div>
   </div>
 </div>
