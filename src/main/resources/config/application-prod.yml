@@ -40,9 +40,9 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/ThePapyrusPrint?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-    username: root
-    password:
+    url: mysql://dxnhl1ftkrreqlop:pen07pj4d7k4xt4t@uf63wl4z2daq9dbb.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/mflei06v3m7ifepv
+    username: dxnhl1ftkrreqlop
+    password: pen07pj4d7k4xt4t
     hikari:
       poolName: Hikari
       auto-commit: false
