@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
   souvenir_mariage = 'Souvenirs de mariage';
   carton_plume = 'Cartons plumes';
   invitation_fete = 'Invitations de fêtes';
+  msg!: string;
 
   constructor(
     private loginService: LoginService,
@@ -96,7 +97,21 @@ export class NavbarComponent implements OnInit {
     return this.isAuthenticated() ? this.accountService.getImageUrl() : '';
   }
 
-  getMenuClicked(menu: any): any {
+  getMenuClicked(menu: string): void {
     this.dataTransfert.changeMessage(menu);
+  }
+
+  closeAlertMessage(): void {
+    this.msg = '';
+  }
+
+  getAlertMessage(menu: string): void {
+    this.msg = 'Les ' + menu + ' sont affiché(e)s dans la liste... ';
+    setTimeout(
+      function(this: any): void {
+        this.msg = '';
+      }.bind(this),
+      5000
+    );
   }
 }
