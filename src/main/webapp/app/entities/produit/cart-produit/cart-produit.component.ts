@@ -25,10 +25,13 @@ export class CartProduitComponent implements OnInit {
     let str = '';
     let path = '';
     if (produit?.description !== undefined) str = produit?.description;
-    this.images = str?.split('--');
-    if (this.images !== undefined) {
-      path = '../../../content/images/' + this.images[0];
+    if (str !== '' && str !== undefined) {
+      this.images = str?.split('--');
+      if (this.images !== undefined) {
+        path = '../../../content/images/' + this.images[0];
+      }
     }
+
     return path;
   }
 }
