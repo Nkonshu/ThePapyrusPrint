@@ -106,12 +106,12 @@ export class NavbarComponent implements OnInit {
   }
 
   getAlertMessage(menu: string): void {
-    this.msg = 'Les ' + menu + ' sont affiché(e)s dans la liste... ';
+    this.msg = 'Les ' + menu + ' sont affiché(e)s dans la liste plus bas... ';
     setTimeout(
       function(this: any): void {
         this.msg = '';
       }.bind(this),
-      5000
+      8000
     );
   }
 }

@@ -36,10 +36,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="getMenuClicked(produits)">
+        <a class="nav-link" routerLink="produit" (click)="getMenuClicked(produits)">
           <span>
             <fa-icon icon="th-list"></fa-icon>
-            <span jhiTranslate="global.menu.produits" (click)="getAlertMessage('Produits')">Produits</span>
+            <span jhiTranslate="global.menu.produits" (click)="getAlertMessage('tous les produits')">Produits</span>
           </span>
         </a>
       </li>
@@ -63,13 +63,13 @@
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(carte_arrondi)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.carte.arrondi" (click)="getAlertMessage('Cartes de visite aux coins arrondis')">Cartes de visite aux coins arrondis</span>
+              <span jhiTranslate="global.menu.carte.arrondi" (click)="getAlertMessage('cartes de visite aux coins arrondis')">Cartes de visite aux coins arrondis</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(carte_carre)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.carte.carre" (click)="getAlertMessage('Cartes de visite carrées')">Cartes de visite carrées</span>
+              <span jhiTranslate="global.menu.carte.carre" (click)="getAlertMessage('cartes de visite carrées')">Cartes de visite carrées</span>
             </a>
           </li>
         </ul>
@@ -93,43 +93,43 @@
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(flyers_depliants)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.flyers" (click)="getAlertMessage('Flyers et dépliants')">Flyers et dépliants</span>
+              <span jhiTranslate="global.menu.marketing.flyers" (click)="getAlertMessage('flyers et dépliants')">Flyers et dépliants</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(chemise_documents)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.chemises" (click)="getAlertMessage('Chemises porte-documents')">Chemises porte-documents</span>
+              <span jhiTranslate="global.menu.marketing.chemises" (click)="getAlertMessage('chemises porte-documents')">Chemises porte-documents</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(etiquettes)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.etiquettes" (click)="getAlertMessage('Étiquettes')">Étiquettes</span>
+              <span jhiTranslate="global.menu.marketing.etiquettes" (click)="getAlertMessage('étiquettes')">Étiquettes</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(service_graphique)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.graphique" (click)="getAlertMessage('Services graphiques')">Services graphiques</span>
+              <span jhiTranslate="global.menu.marketing.graphique" (click)="getAlertMessage('services graphiques')">Services graphiques</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(sac_papier)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.sacs" (click)="getAlertMessage('Sacs en papier')">Sacs en papier</span>
+              <span jhiTranslate="global.menu.marketing.sacs" (click)="getAlertMessage('sacs en papier')">Sacs en papier</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(mug)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.mug" (click)="getAlertMessage('Mugs')">Mugs</span>
+              <span jhiTranslate="global.menu.marketing.mug" (click)="getAlertMessage('mugs')">Mugs</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(mug_magis)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.marketing.tasses" (click)="getAlertMessage('Magic mugs')">Magic mugs</span>
+              <span jhiTranslate="global.menu.marketing.tasses" (click)="getAlertMessage('magic mugs')">Magic mugs</span>
             </a>
           </li>
         </ul>
@@ -153,25 +153,25 @@
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(banderole)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.affiches.banderole" (click)="getAlertMessage('Banderoles')">Banderoles</span>
+              <span jhiTranslate="global.menu.affiches.banderole" (click)="getAlertMessage('banderoles')">Banderoles</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(roll_up)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.affiches.roll" (click)="getAlertMessage('Roll-ups')">Roll-ups</span>
+              <span jhiTranslate="global.menu.affiches.roll" (click)="getAlertMessage('roll-ups')">Roll-ups</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(affiches)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.affiches.affiches" (click)="getAlertMessage('Affiches')">Affiches</span>
+              <span jhiTranslate="global.menu.affiches.affiches" (click)="getAlertMessage('affiches')">Affiches</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(carton_plume)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.affiches.carton" (click)="getAlertMessage('Cartons plumes')">Cartons plumes</span>
+              <span jhiTranslate="global.menu.affiches.carton" (click)="getAlertMessage('cartons plumes')">Cartons plumes</span>
             </a>
           </li>
         </ul>
@@ -195,37 +195,37 @@
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(invitation_mariage)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.invitations.mariage" (click)="getAlertMessage('Faire-part de mariage')">Faire-part de mariage</span>
+              <span jhiTranslate="global.menu.invitations.mariage" (click)="getAlertMessage('faire-part de mariage')">Faire-part de mariage</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(carte_baby_shower)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.invitations.baby" (click)="getAlertMessage('Cartes invitation de baby shower')">Cartes d'invitation de baby shower</span>
+              <span jhiTranslate="global.menu.invitations.baby" (click)="getAlertMessage('cartes invitation de baby shower')">Cartes d'invitation de baby shower</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(carte_invitation_anniversaire)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.invitations.anniversaire" (click)="getAlertMessage('Cartes invitation anniversaire')">Cartes d'invitation d'anniversaire</span>
+              <span jhiTranslate="global.menu.invitations.anniversaire" (click)="getAlertMessage('cartes invitation anniversaire')">Cartes d'invitation d'anniversaire</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(menu)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.invitations.menu" (click)="getAlertMessage('Menus')">Menus</span>
+              <span jhiTranslate="global.menu.invitations.menu" (click)="getAlertMessage('menus')">Menus</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit" (click)="getMenuClicked(invitation_fete)">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.invitations.fete" (click)="getAlertMessage('Invitations de fêtes')">Invitations de fêtes</span>
+              <span jhiTranslate="global.menu.invitations.fete" (click)="getAlertMessage('invitations de fêtes')">Invitations de fêtes</span>
             </a>
           </li>
           <li>
             <a class="dropdown-item" routerLink="produit">
               <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-              <span jhiTranslate="global.menu.invitations.souvenirs" (click)="getAlertMessage('Souvenirs de mariage')">Souvenirs de mariage</span>
+              <span jhiTranslate="global.menu.invitations.souvenirs" (click)="getAlertMessage('souvenirs de mariage')">Souvenirs de mariage</span>
             </a>
           </li>
         </ul>
